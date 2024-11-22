@@ -7,9 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "npx prisma generate",
+    "postinstall": "prisma generate",
     "init-local-db": "npx prisma migrate dev --name init",
-    "vercel-build": "npx prisma generate && prisma migrate deploy && nuxt build"
+    "vercel-build": "npx prisma generate && npx prisma migrate deploy && nuxt build"
   },
   "dependencies": {
     "@prisma/nuxt": "^0.1.0",
