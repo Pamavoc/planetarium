@@ -34,7 +34,7 @@ export const usePlanets = () => {
    */
   const createPlanet = async (payload: CreatePlanetPayload): Promise<any> => {
     try {
-      const { status, data } = await $fetch<ApiResponse>('/api/planets/create', {
+      const { status, data } = await $fetch<ApiResponse>('https://planetarium-gamma.vercel.app/api/planets/create', {
         method: 'POST',
         body: payload,
       });
