@@ -1,6 +1,5 @@
 import { H3Event } from "h3"
 import { z } from 'zod'
-import prisma from "~~/prisma/prisma"
 
 const querySchema = z.object({
     uuid: z.string().uuid()

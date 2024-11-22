@@ -1,5 +1,4 @@
 import { defineEventHandler, getRouterParams } from 'h3';
-import prisma from '~~/prisma/prisma';
 import { z } from 'zod';
 
 const querySchema = z.object({

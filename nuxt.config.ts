@@ -2,14 +2,17 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  modules: ["@prisma/nuxt"],
   future: {
     compatibilityVersion: 4,
   },
+
   runtimeConfig: {
     public: {
       discordWebhook: process.env.DISCORD_WEBOOK_URL,
     }
   },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -19,5 +22,7 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  },
+
+  modules: ['@prisma/nuxt']
 })

@@ -1,6 +1,5 @@
 import { defineEventHandler, getRouterParams, readBody } from 'h3';
 import { z } from 'zod';
-import prisma from '~~/prisma/prisma';
 import { updatePlanetSchema } from '~~/server/schemas';
 
 export default defineEventHandler(async (event) => {

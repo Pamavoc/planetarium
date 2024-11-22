@@ -1,5 +1,4 @@
 import { defineEventHandler, readBody } from 'h3';
-import prisma from "~~/prisma/prisma"
 import { planetSchema } from '~~/server/schemas';
 
 export default defineEventHandler(async (event) => {
