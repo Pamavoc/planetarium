@@ -1,13 +1,15 @@
 <template>
     <div>
         <p>Planetarium</p>
+        <button @click="sendDiscordMessage('test pam env')">Welcome planetarium from</button>
     </div>
 </template>
 <script setup lang="ts">
 // const { data } = useFetch('/api/planets', { method: 'GET' })
+const config = useRuntimeConfig()
 
 const sendDiscordMessage = async (message: string) => {
-    await useFetch(`https://discord.com/api/webhooks/1309446893167837186/YllsyJmxiy_jTHc4rXeAYvbSZ5Xf4LjokcabuVvhj6LGF2vE0kNv5rG1YC4ejY_GVZqH`, {
+    await useFetch(config.public.discordWebhook, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +21,7 @@ const sendDiscordMessage = async (message: string) => {
 }
 
 onMounted(() => {
-    sendDiscordMessage('hello from planetarium')
+   //sendDiscordMessage('hello from @Pam')
 })
 
 </script>

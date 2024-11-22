@@ -4,22 +4,22 @@ import { planetSchema } from '~~/server/schemas';
 
 export default defineEventHandler(async (event) => {
   try {
-    // Récupérer les données du corps de la requête
     const body = await readBody(event);
+    console.log('Body reçu :', body);
 
-    // Validation des données via Zod
     const validatedData = planetSchema.parse(body);
+    console.log('Données validées :', validatedData);
 
-    // Création de la planète dans la base de données
     const newPlanet = await prisma.planet.create({
       data: {
         name: validatedData.name,
         description: validatedData.description,
+        uuid: validatedData.uuid,
         appearance: {
-          create: validatedData.appearance, // Prisma gère automatiquement planetId
+          create: validatedData.appearance,
         },
         stats: {
-          create: validatedData.stats, // Prisma gère automatiquement planetId
+          create: validatedData.stats,
         },
       },
       include: {
@@ -28,9 +28,9 @@ export default defineEventHandler(async (event) => {
       },
     });
 
-
     return { status: 201, data: newPlanet };
   } catch (error) {
-    return createError({ statusCode: 500, statusMessage: 'Error creating planet' });
+    console.error('Erreur serveur :', error);
+    return createError({ statusCode: 500, statusMessage: 'Error creating planet', data: error });
   }
 });

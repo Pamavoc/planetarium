@@ -1,19 +1,4 @@
-export type SurfaceType =
-    | 'ROCK'
-    | 'GAS'
-    | 'ICE'
-    | 'OCEAN'
-    | 'LAVA'
-    | 'DESERT'
-    | 'FOREST'
-    | 'JUNGLE'
-    | 'SWAMP'
-    | 'TUNDRA'
-    | 'MOUNT'
-    | 'PLAINS'
-    | 'CITY'
-    | 'SPACE'
-    | 'OTHER';
+import type { SurfaceType } from "@prisma/client";
 
 export interface Appearance {
     color: string;
@@ -39,8 +24,6 @@ export interface Planet {
     stats?: Stats;
 }
 
-
-
 export interface CreatePlanetPayload {
     name: string;
     description?: string;
@@ -55,3 +38,5 @@ export interface UpdatePlanetPayload {
     appearance?: Partial<Appearance>;
     stats?: Partial<Stats>;
 }
+
+export interface ApiResponse { status: number; data: Planet }

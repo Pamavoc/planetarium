@@ -1,5 +1,9 @@
 <template>
   <main>
+    <nav>
+      <NuxtLink to="/create">New planet</NuxtLink>
+      
+    </nav>
     <slot />
   </main>
 </template>

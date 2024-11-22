@@ -5,6 +5,11 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  runtimeConfig: {
+    public: {
+      discordWebhook: process.env.DISCORD_WEBOOK_URL,
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {

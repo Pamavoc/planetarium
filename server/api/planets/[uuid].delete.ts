@@ -2,11 +2,12 @@ import { defineEventHandler, getRouterParams } from 'h3';
 import prisma from '~~/prisma/prisma';
 import { z } from 'zod';
 
-export default defineEventHandler(async (event) => {
-  const querySchema = z.object({
-    uuid: z.string().uuid()
-  })
+const querySchema = z.object({
+  uuid: z.string().uuid()
+})
 
+
+export default defineEventHandler(async (event) => {
   try {
 
     const query = await getValidatedQuery(event, querySchema.safeParse)

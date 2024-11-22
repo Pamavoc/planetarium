@@ -12,7 +12,9 @@ export default defineEventHandler(async () => {
     });
 
     return { status: 200, data: planets };
-  } catch {
-    return createError({ statusCode: 500, statusMessage: 'Error creating planet' });
+  } catch (error) {
+    return { status: 500, message: 'Internal Server Error' };
   }
+
+
 });
