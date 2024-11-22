@@ -28,7 +28,6 @@ const planet: Planet = reactive({
 const create = async () => {
     const { createPlanet } = usePlanets();
     const planetReturn = await createPlanet(planet);
-    console.log(planetReturn);
 }
 </script>
 

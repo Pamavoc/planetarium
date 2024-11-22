@@ -23,6 +23,4 @@ export default defineNuxtConfig({
       }
     }
   },
-
-  modules: ['@prisma/nuxt']
 })
