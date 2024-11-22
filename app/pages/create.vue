@@ -1,9 +1,17 @@
 <template>
     <div>
         <button @click="create">Create planet</button>
+        <FormWrapper>
+            <FormInput @update="updatePlanetName" />
+            <FormInput @update="updatePlanetDescription" />
+        </FormWrapper>
     </div>
 </template>
 <script setup lang="ts">
+definePageMeta({
+    layout: 'details'
+})
+
 import type { Planet } from '~/types/planet';
 
 const planet: Planet = reactive({
@@ -25,9 +33,24 @@ const planet: Planet = reactive({
  }
 });
 
+
+const updatePlanetName = (value: string) => {
+    planet.name = value;
+}
+
+const updatePlanetDescription = (value: string) => {
+    planet.name = value;
+    console.log(planet)
+}
+
+
+
+
+
 const create = async () => {
     const { createPlanet } = usePlanets();
     const planetReturn = await createPlanet(planet);
+    console.log(planetReturn);
 }
 </script>
 

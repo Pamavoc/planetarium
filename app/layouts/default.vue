@@ -1,10 +1,8 @@
 <template>
   <main>
-    <nav>
-      <NuxtLink to="/create">New planet</NuxtLink>
-      
-    </nav>
+    <NavBarBottom />
     <slot />
+    
   </main>
 </template>
 <style lang="scss" scoped>

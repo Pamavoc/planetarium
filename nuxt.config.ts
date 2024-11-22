@@ -2,9 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ["@prisma/nuxt"],
+  modules: ["@prisma/nuxt", "@tresjs/nuxt"],
   future: {
     compatibilityVersion: 4,
+  },
+  tres: {
+    devtools: true,
+    glsl: true,
   },
 
   runtimeConfig: {
@@ -14,6 +18,11 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    resolve: {
+      alias: {
+        '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js',
+      },
+    },
     css: {
       preprocessorOptions: {
         scss: {
