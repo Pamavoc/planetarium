@@ -5,6 +5,7 @@ export const usePlanets = () => {
   /**
    * Récupère toutes les planètes.
    */
+
   const fetchPlanets = async (): Promise<Planet[]> => {
     
     const { data, error } = await useFetch<{ status: number; data: Planet[] }>('/api/planets');
@@ -62,4 +63,5 @@ export const usePlanets = () => {
   };
 
   return { fetchPlanets, fetchPlanetByUUID, createPlanet, updatePlanet, deletePlanet };
+
 };

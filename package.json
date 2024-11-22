@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "prisma generate",
+    "init-local-db": "prisma migrate dev --name init",
     "vercel-build": "prisma generate && prisma migrate deploy && nuxt build"
   },
   "dependencies": {
