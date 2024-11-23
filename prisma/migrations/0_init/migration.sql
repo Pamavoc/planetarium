@@ -53,3 +53,4 @@ ALTER TABLE "Appearance" ADD CONSTRAINT "Appearance_planetId_fkey" FOREIGN KEY (
 
 -- AddForeignKey
 ALTER TABLE "Stats" ADD CONSTRAINT "Stats_planetId_fkey" FOREIGN KEY ("planetId") REFERENCES "Planet"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
