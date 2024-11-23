@@ -1,4 +1,4 @@
-import type { SurfaceType } from "@prisma/client";
+import {SurfaceType} from '@/prisma/generated/client';
 
 export interface Appearance {
     color: string;

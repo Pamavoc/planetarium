@@ -6,7 +6,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { SurfaceType } from "@prisma/client";
 import type { Stats } from "~/types/planet";
 
 interface Appearance {
