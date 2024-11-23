@@ -10,6 +10,7 @@
     "postinstall": "npx prisma generate",
     "init-local-db": "npx prisma migrate dev --name init",
     "vercel-build": "npx prisma db push && npx prisma generate && nuxt build"
+    
   },
   "dependencies": {
     "@prisma/nuxt": "^0.1.0",
