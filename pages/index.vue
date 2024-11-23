@@ -16,6 +16,5 @@
   position: relative;
   overflow: hidden;
   background-color: #000;
-  
 }
 </style>
