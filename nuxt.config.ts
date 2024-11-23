@@ -11,11 +11,6 @@ export default defineNuxtConfig({
     glsl: true,
   },
   vite: {
-    resolve: {
-      alias: {
-        '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js',
-      },
-    },
     css: {
       preprocessorOptions: {
         scss: {
