@@ -7,7 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "npx prisma generate",
+    "postinstall": "nuxt prepare",
     "init-local-db": "npx prisma migrate dev --name init",
     "vercel-build": "npx prisma generate && npx prisma migrate deploy && nuxt build"
   },
@@ -15,15 +15,15 @@
     "@prisma/nuxt": "^0.1.0",
     "@tresjs/core": "^4.3.1",
     "@tresjs/nuxt": "^3.0.7",
-    "nuxt": "^3.14.159",
+    "@types/three": "^0.170.0",
+    "nuxt": "^3.14.1592",
+    "sass": "^1.81.0",
     "three": "^0.170.0",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@prisma/client": "^5.22.0",
-    "@types/three": "^0.170.0",
-    "sass": "^1.81.0"
+    "@prisma/client": "^5.22.0"
   }
 }

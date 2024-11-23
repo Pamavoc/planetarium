@@ -168,7 +168,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/macbook/Desktop/projects/gobelins/planetarium/prisma/generated/client",
+      "value": "C:\\Users\\Pierre-Alexis\\Desktop\\gobs\\planetarium\\prisma\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -177,12 +177,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/macbook/Desktop/projects/gobelins/planetarium/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\Pierre-Alexis\\Desktop\\gobs\\planetarium\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -205,8 +205,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum SurfaceType {\n  ROCK // Planète rocheuse\n  GAS // Planète gazeuse\n  ICE // Planète glacée\n  OCEAN // Planète océanique\n  LAVA // Planète volcanique\n  DESERT // Planète désertique\n  FOREST // Planète forestière\n  JUNGLE // Planète jungle\n  SWAMP // Planète marécageuse\n  TUNDRA // Planète toundra\n  MOUNT // Planète montagneuse\n  PLAINS // Planète de plaines\n  CITY // Planète urbaine\n  SPACE // Planète spatiale\n  OTHER // Autre type de planète\n}\n\nmodel Planet {\n  id          String      @id @default(cuid())\n  uuid        String      @unique @default(cuid())\n  name        String\n  description String?\n  appearance  Appearance?\n  stats       Stats?\n  createdAt   DateTime    @default(now())\n  updatedAt   DateTime    @updatedAt\n}\n\nmodel Appearance {\n  id          String      @id @default(cuid())\n  color       String // Couleur principale (hex ou rgba)\n  texture     String? // Texture choisie ou générée\n  size        Float // Taille de la planète\n  brightness  Float // Luminosité (0.0 à 1.0)\n  surfaceType SurfaceType // Type de surface : défini via l'enum\n  planetId    String      @unique\n  planet      Planet      @relation(fields: [planetId], references: [id])\n}\n\nmodel Stats {\n  id          String @id @default(cuid())\n  water       Float // Pourcentage d'eau (0.0 à 100.0)\n  vegetation  Float // Pourcentage de végétation (0.0 à 100.0)\n  atmosphere  Float // Densité de l’atmosphère (0.0 à 1.0)\n  temperature Float // Température moyenne en degrés Celsius\n  gravity     Float // Gravité relative (1.0 = gravité terrestre)\n  planetId    String @unique\n  planet      Planet @relation(fields: [planetId], references: [id])\n}\n",
-  "inlineSchemaHash": "e64f8bfe731eb02b6856469ec0a9b2fd560695b35f8ea65a47d7fed85cb7150c",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum SurfaceType {\n  ROCK // Planète rocheuse\n  GAS // Planète gazeuse\n  ICE // Planète glacée\n  OCEAN // Planète océanique\n  LAVA // Planète volcanique\n  DESERT // Planète désertique\n  FOREST // Planète forestière\n  JUNGLE // Planète jungle\n  SWAMP // Planète marécageuse\n  TUNDRA // Planète toundra\n  MOUNT // Planète montagneuse\n  PLAINS // Planète de plaines\n  CITY // Planète urbaine\n  SPACE // Planète spatiale\n  OTHER // Autre type de planète\n}\n\nmodel Planet {\n  id          String      @id @default(cuid())\n  uuid        String      @unique @default(cuid())\n  name        String\n  description String?\n  appearance  Appearance?\n  stats       Stats?\n  createdAt   DateTime    @default(now())\n  updatedAt   DateTime    @updatedAt\n}\n\nmodel Appearance {\n  id          String      @id @default(cuid())\n  color       String // Couleur principale (hex ou rgba)\n  texture     String? // Texture choisie ou générée\n  size        Float // Taille de la planète\n  brightness  Float // Luminosité (0.0 à 1.0)\n  surfaceType SurfaceType // Type de surface : défini via l'enum\n  planetId    String      @unique\n  planet      Planet      @relation(fields: [planetId], references: [id])\n}\n\nmodel Stats {\n  id          String @id @default(cuid())\n  water       Float // Pourcentage d'eau (0.0 à 100.0)\n  vegetation  Float // Pourcentage de végétation (0.0 à 100.0)\n  atmosphere  Float // Densité de l’atmosphère (0.0 à 1.0)\n  temperature Float // Température moyenne en degrés Celsius\n  gravity     Float // Gravité relative (1.0 = gravité terrestre)\n  planetId    String @unique\n  planet      Planet @relation(fields: [planetId], references: [id])\n}\n",
+  "inlineSchemaHash": "8660bbfc11d08120525888cf70a768709d8ee97afd88011e19fe2e7cbec0bfc4",
   "copyEngine": true
 }
 
@@ -244,8 +244,8 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
-path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
-path.join(process.cwd(), "prisma/generated/client/libquery_engine-darwin-arm64.dylib.node")
+path.join(__dirname, "query_engine-windows.dll.node");
+path.join(process.cwd(), "prisma/generated/client/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "prisma/generated/client/schema.prisma")

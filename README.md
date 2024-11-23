@@ -1,9 +1,23 @@
+# Nuxt Minimal Starter
+
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
 ## Setup
 
 Make sure to install dependencies:
 
 ```bash
+# npm
 npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
 ## Development Server
@@ -13,22 +27,49 @@ Start the development server on `http://localhost:3000`:
 ```bash
 # npm
 npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
+## Production
 
-## Extensions
+Build the application for production:
 
-Install `https://nuxtr.com/`
+```bash
+# npm
+npm run build
 
+# pnpm
+pnpm build
 
-## Prisma 
+# yarn
+yarn build
 
-Install postgresql : `https://www.pgadmin.org/download`
+# bun
+bun run build
+```
 
-Modify `.env` : 
-`DATABASE_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=SCHEMA`
-`DATABASE_URL=postgresql://postgres:admin@localhost:5432/gobelins?schema=public`
+Locally preview production build:
 
-Create your schema in schema.prisma
+```bash
+# npm
+npm run preview
 
-Finally, run : npm prisma migrate dev --name init
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

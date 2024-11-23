@@ -1,22 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: false },
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true },
   modules: ["@prisma/nuxt", "@tresjs/nuxt"],
-  future: {
-    compatibilityVersion: 4,
+  prisma: {
+    autoSetupPrisma: true,
   },
   tres: {
     devtools: true,
     glsl: true,
   },
-
-  runtimeConfig: {
-    public: {
-      discordWebhook: process.env.DISCORD_WEBOOK_URL,
-    }
-  },
-
   vite: {
     resolve: {
       alias: {
