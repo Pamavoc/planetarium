@@ -3,12 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "prisma generate && nuxt build && prisma migrate deploy && npx prisma migrate status",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "init-local-db": "npx prisma migrate dev --name init",
-    "vercel-build": "prisma generate  && nuxt build && prisma migrate deploy && npx prisma migrate status",
     "postinstall": "prisma generate"
   },
   "dependencies": {
