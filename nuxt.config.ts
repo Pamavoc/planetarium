@@ -10,7 +10,9 @@ export default defineNuxtConfig({
     devtools: true,
     glsl: true,
   },
-  
+  nitro: {
+    preset: 'vercel',
+  },
   vite: {
     resolve: {
       alias: {
