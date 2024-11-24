@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import {SurfaceType} from '@/prisma/generated/client';
+import { SurfaceType } from '@prisma/client'
 
 // Schéma réutilisable pour l'apparence
 const appearanceSchema = z.object({
